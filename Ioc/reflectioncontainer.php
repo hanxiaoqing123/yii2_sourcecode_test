@@ -100,7 +100,7 @@ echo "</pre>";
 (
     [_emailSenderObject:User:private] => EmailSenderBy163 Object
         (
-            [_name:EmailSenderBy163:private] =>
+            [_name:EmailSenderBy163:private] =>this is name
         )
 
 )
