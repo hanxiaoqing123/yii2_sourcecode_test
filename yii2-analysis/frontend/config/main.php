@@ -7,11 +7,13 @@ $params = array_merge(
 );
 
 return [
+    //'a'=>111,
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'a'=>'111',
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
