@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use frontend\components\Foo;
+use Yii;
 
 class TestController extends \yii\web\Controller
 {
@@ -29,4 +30,8 @@ class TestController extends \yii\web\Controller
         $foo->trigger(Foo::EVENT_HELLO);
     }
 
+    public function actionIndex2()
+    {
+        Yii::$app->callA();
+    }
 }
