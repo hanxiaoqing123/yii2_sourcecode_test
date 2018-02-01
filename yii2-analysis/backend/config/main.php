@@ -10,6 +10,10 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    //controllerMap映射
+    'controllerMap'=>[
+        'hxq'=>'backend\controllers\SiteController',
+    ],
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
