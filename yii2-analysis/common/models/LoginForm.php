@@ -55,6 +55,7 @@ class LoginForm extends Model
      */
     public function login()
     {
+        //在校验用户名、密码准备之后，我们会调用 yii\web\User::login 方法完成登录操作
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {
