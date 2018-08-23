@@ -5,7 +5,7 @@ class Test{
     public $name;
     private $_age;
     private $_t;
-
+    //Test依赖T
     public function __construct($age,T $t)
     {
         $this->_age=$age;
