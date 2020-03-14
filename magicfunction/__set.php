@@ -8,6 +8,7 @@ class A{
     {
         var_dump($name);
     }
+    //给类不存在或者不可访问的属性赋值时会被自动调用
     public  function __set($name, $value)
     {
         var_dump($name,$value);

@@ -7,20 +7,20 @@
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
-          <root url="file://C:/Windows/System32" />
+          <root url="file://$APPLICATION_HOME_DIR$/bin" />
         </CLASSES>
         <SOURCES>
-          <root url="file://C:/Windows/System32" />
+          <root url="file://$APPLICATION_HOME_DIR$/bin" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/yii2-analysis/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/yii2-analysis/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
         </SOURCES>
       </library>
     </orderEntry>

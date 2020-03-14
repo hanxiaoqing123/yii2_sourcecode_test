@@ -9,16 +9,16 @@ class Container{
     public function build($class,$params)
     {
         $dependencies=[];   //其他依赖
-        $reflection=new ReflectionClass($class);
-        $constuctor=$reflection->getConstructor();  //获取类的构造函数
+        $reflection=new ReflectionClass($class); //新建一个反射对象
+        $constructor=$reflection->getConstructor();  //获取构造方法
         /*
          var_dump($constuctor);
          object(ReflectionMethod)[3]
              public 'name' => string '__construct' (length=11)
              public 'class' => string 'User' (length=4)
          * */
-        if($constuctor!=null){
-            //继承自 ReflectionFunctionAbstract::getParameters — 获取参数
+        if($constructor!=null){
+            //继承自 ReflectionFunctionAbstract::getParameters — 获取构造方法参数
             /*
              var_dump($constuctor->getParameters());
              array (size=1)
@@ -26,7 +26,8 @@ class Container{
                     object(ReflectionParameter)[4]
                     public 'name' => string 'emailSenderObject' (length=17)
              * */
-            foreach ($constuctor->getParameters() as $param){
+            //$constructor->getParameters():取构造函数参数,通过 ReflectionParameter 数组返回参数列表
+            foreach ($constructor->getParameters() as $param){
                //获取反射类
                 $c=$param->getClass();
                 /*
@@ -34,8 +35,9 @@ class Container{
                  object(ReflectionClass)[5]
                      public 'name' => string 'EmailSenderBy163' (length=16)
                  * */
+                //如果构造方法有入参，迭代并递归创建依赖类实例
                 if($c!=null){
-                    $dependencies[]=$this->get($c->getName(),$params);
+                    $dependencies[]=$this->get($c->getName());
                     /*获取类名
                       var_dump($c->getName());
                       string 'EmailSenderBy163' (length=16)
@@ -52,7 +54,7 @@ class Container{
         'EmailSenderBy163' => string 'this is name' (length=12)
          * */
 
-        //从给出的参数创建一个新的类实例
+        //最后根据创建的参数创建实例，完成依赖的注入
         return $reflection->newInstanceArgs($dependencies);
     }
 

@@ -5,7 +5,7 @@ interface  EmailSender{
 class  EmailSenderByQq implements  EmailSender {
     public function sender()
     {
-        
+
     }
 }
 class  EmailSenderBy163 implements  EmailSender {
@@ -19,7 +19,7 @@ class  User{
     //$emailSenderObject必须是实现EmailSender接口的子类
     public function __construct(EmailSender $emailSenderObject)
     {
-         $this->emailSenderClass=$emailSenderObject;
+        $this->emailSenderClass=$emailSenderObject;
     }
 
     public function register()
@@ -28,4 +28,4 @@ class  User{
     }
 }
 $user=new User(new EmailSenderBy163());
-$user->register();     
+$user->register();
